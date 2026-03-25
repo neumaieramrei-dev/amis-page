@@ -1,5 +1,25 @@
 p{
 
     color: blueviolet;
-    font-size: 20px;
+    font-size: 10vw;
+    background-color: aqua;
+    position: relative;
+    font-family: Amreis;
+
+}
+
+#conatiner{
+    display: flex;
+    justify-content:center;
+}
+
+@font-face {
+    font-family: Amreis;
+    src: url(./fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+#amrei{
+
+    width: 50vw;
+    opacity: 50%;
 }
