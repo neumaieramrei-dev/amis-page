@@ -5,6 +5,46 @@ body {
   color: #111;
 }
 
+/* NAVIGATION */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 25px 8%;
+  display: flex;
+  justify-content: center; /* Navigation zentriert */
+  gap: 40px;
+  align-items: center;
+  background-color: #e6b8c4; /* rosa */
+  z-index: 1000;
+  box-sizing: border-box; /* Padding innerhalb der Breite */
+}
+
+.nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600; /* dickere Schrift */
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #111;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* SECTIONS */
 section {
   padding: 100px 8%;
 }
@@ -14,6 +54,7 @@ h1 {
   margin-bottom: 60px;
 }
 
+/* GALLERY */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -27,4 +68,13 @@ h1 {
 
 .gallery-grid img:hover {
   transform: scale(1.05);
+}
+
+/* RESPONSIVE NAVIGATION */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 8%;
+  }
 }

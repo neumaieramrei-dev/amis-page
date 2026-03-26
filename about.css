@@ -1,32 +1,98 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #f2eee9;
+  background-color: #e9edf2;
   color: #111;
 }
 
+/* NAVIGATION */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 25px 8%;
+  display: flex;
+  justify-content: center; 
+  gap: 40px;
+  align-items: center;
+  background-color: #e6b8c4;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #111;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* SECTIONS */
 section {
   padding: 100px 8%;
 }
 
 h1 {
   font-size: clamp(3rem, 7vw, 5rem);
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
+/* ÜBER MICH CONTENT */
 .about-content {
   display: flex;
-  gap: 50px;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: center;       /* vertikal zentriert */
+  gap: 60px;                 /* Abstand zwischen Bild und Text */
+  flex-wrap: wrap;           /* für mobile Geräte */
 }
 
 .about-content img {
-  width: 300px;
-  border-radius: 8px;
+  width: 350px;              /* feste Breite auf Desktop */
+  max-width: 100%;           /* skaliert auf kleinen Geräten */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: block;
 }
 
-.about-content p {
-  max-width: 500px;
-  line-height: 1.8;
+.about-text {
+  flex: 1;                   /* Text nimmt restlichen Platz */
+  min-width: 300px;          /* verhindert zu schmalen Text */
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #111;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 8%;
+  }
+
+  .about-content {
+    flex-direction: column;  /* Bild über Text auf Mobilgeräten */
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-text {
+    min-width: 0;
+  }
 }
