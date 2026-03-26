@@ -12,12 +12,12 @@ body {
   width: 100%;
   padding: 25px 8%;
   display: flex;
-  justify-content: center; /* Navigation zentriert */
+  justify-content: center; 
   gap: 40px;
   align-items: center;
-  background-color: #e6b8c4; /* rosa */
+  background-color: #e6b8c4; 
   z-index: 1000;
-  box-sizing: border-box; /* Padding innerhalb der Breite */
+  box-sizing: border-box; 
 }
 
 .nav a {

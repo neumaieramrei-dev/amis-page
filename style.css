@@ -1,36 +1,28 @@
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: #e9edf2;
   color: #111;
 }
 
-h1, h2, h3 {
-  margin: 0;
-}
-
-section {
-  padding: 80px 8%;
-}
-
-/* NAVIGATION */
 .nav {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 25px 8%;
   display: flex;
-  justify-content: center; /* zentriert die Links */
+  justify-content: flex-end;
   gap: 40px;
   align-items: center;
-  background-color: #e6b8c4; /* rosa */
+  background-color: #e6b8c4;
   z-index: 1000;
-  box-sizing: border-box; /* Padding innerhalb der Breite */
+  box-sizing: border-box;
 }
 
 .nav a {
   text-decoration: none;
   color: #111;
-  font-weight: 600; /* dickere Schrift */
+  font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
   position: relative;
@@ -51,13 +43,13 @@ section {
   width: 100%;
 }
 
-/* HERO */
 .hero {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background-color: #e6b8c4;
+  padding: 120px 8%;
 }
 
 .hero-text {
@@ -66,11 +58,12 @@ section {
 }
 
 .hero-text h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(3rem, 7vw, 5rem);
+  margin-bottom: 20px;
 }
 
 .hero-text p {
-  margin-top: 20px;
+  font-size: 1.2rem;
 }
 
 .hero-images {
@@ -78,17 +71,23 @@ section {
   display: flex;
   gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-images img {
+  width: 200px;     /* feste Breite = garantiert nebeneinander */
+  height: auto;
 }
 
 .hero-images img {
   width: 45%;
-  max-width: 260px;
+  max-width: 220px;
+  height: auto;
 }
 
-/* WORK (FIXED BACK TO CLEAN VERSION) */
 .work {
   background-color: #f5f5f5;
+  padding: 100px 8%;
 }
 
 .work h2 {
@@ -125,10 +124,10 @@ section {
   opacity: 0.7;
 }
 
-/* METHOD */
 .method {
   background-color: #000;
   color: #fff;
+  padding: 100px 8%;
 }
 
 .method h2 {
@@ -157,16 +156,25 @@ section {
   opacity: 0.85;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 8%;
+  }
 
   .hero {
     flex-direction: column;
     text-align: center;
   }
 
+  .hero-images {
+    flex-wrap: wrap;
+  }
+
   .hero-images img {
     width: 80%;
+    max-width: 300px;
   }
 
   .process-grid {
@@ -175,12 +183,5 @@ section {
 
   .method-grid {
     grid-template-columns: 1fr;
-  }
-
-  /* NAVIGATION MOBILE */
-  .nav {
-    flex-direction: column;
-    gap: 20px;
-    padding: 15px 8%;
   }
 }
